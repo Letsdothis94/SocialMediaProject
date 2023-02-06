@@ -1,16 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 
-function NewPost() {
+function NewPost({ user }) {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [image, setImage] = useState(null)
-    const [userid, setUserid] = useState(1)
+    const [userid, setUserid] = useState(user.id)
     const [likes, setLikes] = useState(0)
-    console.log(title)
-    console.log(content)
-    console.log(image)
-    console.log(userid)
+    // console.log(title)
+    // console.log(content)
+    // console.log(image)
+     console.log(userid)
     
     function handleSubmit(e){
         e.preventDefault()
@@ -49,8 +49,8 @@ function NewPost() {
             <input value={title} type="text" placeholder="title here..." onChange={(e) => setTitle(e.target.value)} /><br />
             <h2>Content:</h2>
             <input name={content} type="text" placeholder="Content here..." onChange={(e) => setContent(e.target.value)} /><br />
-            <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} />
-            <button type="submit"></button>
+            <input type="file" accept="image/*" onChange={(e) => setImage(e.target.files[0])} /><br />
+            <button type="submit">Post</button>
         </form>
     </div>
   )

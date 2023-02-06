@@ -4,8 +4,8 @@ import { useState } from 'react'
 function Postcomment( { post } ) {
 
     const [content, setContent] = useState('')
-    console.log(content)
-    console.log(post.id)
+    // console.log(content)
+    // console.log(post.id)
 
     function postingComment(e){
         e.preventDefault()
